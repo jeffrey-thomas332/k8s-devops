@@ -11,10 +11,7 @@ spec:
     matchLabels:
       tier: frontend
   strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxSurge: 100%
-      maxUnavailable: 0%
+    type: Recreate
   template:
     metadata:
       labels:
