@@ -1,9 +1,9 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: animal-bear
+  name: bear
   labels:
-    app: ui
+    app: bear
     tier: frontend
 spec:
   replicas: 1
@@ -18,18 +18,19 @@ spec:
   template:
     metadata:
       labels:
+        app: bear
         tier: frontend
     spec:
       containers:
-      - name: animal-test
+      - name: bear
         image: "supergiantkir/animals:bear"
 ---
 apiVersion: apps/v1
 kind: Deployment  
 metadata:
-  name: animal-moose
+  name: moose
   labels:
-    app: ui
+    app: moose
     tier: frontend
 spec:
   replicas: 2
@@ -44,8 +45,9 @@ spec:
   template:
     metadata:
       labels:
+        app: moose
         tier: frontend
     spec:
       containers:
-      - name: animal-moose
+      - name: moose
         image: "supergiantkir/animals:moose"
